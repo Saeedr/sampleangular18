@@ -1,0 +1,40 @@
+<div  class="container">
+    <div  class="row">
+        <div  class="col-12 md-8 col-lg-4 mx-auto">
+            <div  class="row">
+                <div  class="col-12 mb-2">
+                    <label  class="mb-1">نام</label>
+                    <input #txtname placeholder="نام را وارد کنید ..." class="form-control">
+                </div>
+                <div  class="col-12 mb-2">
+                    <label  class="mb-1">ایمیل</label>
+                    <input #txtEmail placeholder="ایمیل را وارد کنید ..." class="form-control">
+                </div>
+                <div  class="col-12 mb-2">
+                    <label  class="mb-1"> توضیحات</label>
+                    <textarea #txtDesc  placeholder="توضیحات را وارد کنید ..." class="form-control" style="height: 72px;">
+                    </textarea>
+                </div>
+                <div  class="col-12 mb-2">
+                        <button (click)="sendForm()" class="btn btn-primary" *ngIf="!isCallingApi; else loading">ارسال</button>
+                    <ng-template #loading>
+                        <div class="spinner-border" role="status">
+                           
+                        </div>
+                    </ng-template>
+                    </div>
+                </div>
+                <div class="col-12 mb-2" *ngIf="IsSubmitted">
+                    <div class="alert alert-success">
+                        <ul>
+                            <li>{{name}}</li>
+                            <li>{{email}}</li>
+
+                            <li>{{desc}}</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
